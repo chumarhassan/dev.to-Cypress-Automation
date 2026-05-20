@@ -1,0 +1,4 @@
+username,password,expected
+validuser@mail.com,Valid@123,success
+baduser@mail.com,wrongpass,fail
+empty@mail.com,,fail

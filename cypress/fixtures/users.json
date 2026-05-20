@@ -1,0 +1,6 @@
+[
+  { "email": "user1@example.com", "password": "Pass@1234", "valid": true },
+  { "email": "user2@example.com", "password": "Pass@5678", "valid": true },
+  { "email": "wrong@example.com", "password": "wrongpass", "valid": false },
+  { "email": "",                  "password": "",            "valid": false }
+]

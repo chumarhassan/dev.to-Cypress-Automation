@@ -1,0 +1,18 @@
+# .gitignore — prevents sensitive files and generated artifacts from being committed
+
+# ⚠️ NEVER commit credentials or environment files
+.env
+cypress.env.json
+
+# Node modules — install via npm install
+node_modules/
+
+# Cypress auto-generated artifacts
+cypress/videos/
+cypress/screenshots/
+cypress/downloads/
+cypress/snapshots/
+
+# OS artifacts
+.DS_Store
+Thumbs.db

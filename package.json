@@ -1,0 +1,25 @@
+{
+  "name": "cypress-devto-automation",
+  "version": "1.0.0",
+  "description": "Cypress automation framework for dev.to covering login, search, navigation, API, visual regression, and CSV data-driven tests.",
+  "scripts": {
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "cy:login": "cypress run --spec 'cypress/e2e/01_login.cy.js'",
+    "cy:search": "cypress run --spec 'cypress/e2e/02_search.cy.js'",
+    "cy:nav": "cypress run --spec 'cypress/e2e/03_navigation.cy.js'",
+    "cy:api": "cypress run --spec 'cypress/e2e/04_api.cy.js'",
+    "cy:visual": "cypress run --spec 'cypress/e2e/05_visual.cy.js'",
+    "cy:studio": "cypress run --spec 'cypress/e2e/06_studio_generated.cy.js'",
+    "cy:csv": "cypress run --spec 'cypress/e2e/07_csv_driven.cy.js'",
+    "cy:record": "cypress run --record",
+    "cy:all": "cypress run --record"
+  },
+  "devDependencies": {
+    "@shelex/cypress-allure-plugin": "^2.40.1",
+    "cypress": "^13.0.0",
+    "cypress-image-snapshot": "^4.0.1",
+    "dotenv": "^16.0.0",
+    "papaparse": "^5.5.3"
+  }
+}
