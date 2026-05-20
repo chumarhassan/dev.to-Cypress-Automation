@@ -1,25 +1,51 @@
-📌 Project Overview
+# 🚀 Cypress DEV.to Automation Framework
+
+A complete **Cypress End-to-End Automation Framework** for testing the [DEV Community](https://dev.to) platform.
+
+This project demonstrates:
+
+- ✅ UI Testing
+- ✅ API Testing
+- ✅ Visual Regression Testing
+- ✅ CSV & Fixture Driven Testing
+- ✅ Custom Commands
+- ✅ Environment-Based Configuration
+- ✅ Cypress Dashboard Recording
+
+---
+
+# 📌 Project Overview
 
 This repository contains a complete automated test suite built with Cypress for validating key workflows on the DEV.to platform.
 
 The framework is designed for:
 
-Learning Cypress Automation
-Real-world automation practice
-API & UI validation
-Data-driven testing
-Portfolio & demonstration projects
-🛠️ Tech Stack
-Technology	Purpose
-Cypress	End-to-End Testing
-JavaScript	Test Scripting
-Node.js	Runtime Environment
-npm	Package Management
-dotenv	Environment Variable Management
-PapaParse	CSV Parsing
-Cypress Image Snapshot	Visual Regression Testing
-Allure Cypress Plugin	Reporting
-📂 Folder Structure
+- Learning Cypress Automation
+- Real-world automation practice
+- API & UI validation
+- Data-driven testing
+- Portfolio & demonstration projects
+
+---
+
+# 🛠️ Tech Stack
+
+| Technology | Purpose |
+|------------|----------|
+| Cypress | End-to-End Testing |
+| JavaScript | Test Scripting |
+| Node.js | Runtime Environment |
+| npm | Package Management |
+| dotenv | Environment Variable Management |
+| PapaParse | CSV Parsing |
+| Cypress Image Snapshot | Visual Regression Testing |
+| Allure Cypress Plugin | Reporting |
+
+---
+
+# 📂 Folder Structure
+
+```text
 .
 ├── cypress/
 │   ├── e2e/
@@ -46,83 +72,144 @@ Allure Cypress Plugin	Reporting
 ├── package-lock.json
 ├── .gitignore
 └── README.md
-✅ Test Coverage
-🔐 Login Tests
+```
+
+---
+
+# ✅ Test Coverage
+
+---
+
+## 🔐 Login Tests
 
 📄 File:
 
+```text
 cypress/e2e/01_login.cy.js
-Covers
-Valid login flow
-Invalid login validation
-Multiple invalid users from JSON fixture
-Inline data-driven login tests
-Token-based authentication helper
-🔍 Search Tests
+```
+
+### Covers
+
+- Valid login flow
+- Invalid login validation
+- Multiple invalid users from JSON fixture
+- Inline data-driven login tests
+- Token-based authentication helper
+
+---
+
+## 🔍 Search Tests
 
 📄 File:
 
+```text
 cypress/e2e/02_search.cy.js
-Covers
-Searching articles on DEV.to
-Search query validation
-Fixture-based keyword testing
-Search page loading checks
-🧭 Navigation Tests
+```
+
+### Covers
+
+- Searching articles on DEV.to
+- Search query validation
+- Fixture-based keyword testing
+- Search page loading checks
+
+---
+
+## 🧭 Navigation Tests
 
 📄 File:
 
+```text
 cypress/e2e/03_navigation.cy.js
-Covers
-Page navigation
-URL validation
-Header visibility checks
-Common DEV.to route testing
-🌐 API Tests
+```
+
+### Covers
+
+- Page navigation
+- URL validation
+- Header visibility checks
+- Common DEV.to route testing
+
+---
+
+## 🌐 API Tests
 
 📄 File:
 
+```text
 cypress/e2e/04_api.cy.js
-Covers
-Mocking API responses using cy.intercept()
-Spying on real API calls
-Sending GET requests using cy.request()
-Authenticated API request testing
-Mock POST request validation
-Fixture-based article payload testing
-Optional real article creation via environment variables
-🖼️ Visual Regression Tests
+```
+
+### Covers
+
+- Mocking API responses using `cy.intercept()`
+- Spying on real API calls
+- Sending GET requests using `cy.request()`
+- Authenticated API request testing
+- Mock POST request validation
+- Fixture-based article payload testing
+- Optional real article creation via environment variables
+
+---
+
+## 🖼️ Visual Regression Tests
 
 📄 File:
 
+```text
 cypress/e2e/05_visual.cy.js
-Covers
-Screenshot comparison
-Baseline image validation
-Page-level visual checks using Cypress Image Snapshot
-🎥 Cypress Studio Tests
+```
+
+### Covers
+
+- Screenshot comparison
+- Baseline image validation
+- Page-level visual checks using Cypress Image Snapshot
+
+---
+
+## 🎥 Cypress Studio Tests
 
 📄 File:
 
+```text
 cypress/e2e/06_studio_generated.cy.js
-Covers
-Cypress Studio generated flows
-Recorded browser interactions
-📊 CSV-Driven Tests
+```
+
+### Covers
+
+- Cypress Studio generated flows
+- Recorded browser interactions
+
+---
+
+## 📊 CSV-Driven Tests
 
 📄 File:
 
+```text
 cypress/e2e/07_csv_driven.cy.js
-Covers
-Reading test data from CSV files
-Data-driven execution
-External test data management
-⚡ Custom Commands
+```
+
+### Covers
+
+- Reading test data from CSV files
+- Data-driven execution
+- External test data management
+
+---
+
+# ⚡ Custom Commands
 
 Custom Cypress commands are defined in:
 
+```text
 cypress/support/commands.js
-Available Commands
+```
+
+## Available Commands
+
+```js
 cy.visitDevTo()
 cy.loginUI()
 cy.loginWithToken()
@@ -130,20 +217,30 @@ cy.bypassLoginWithToken()
 cy.searchFor()
 cy.goTo()
 cy.pageLoaded()
+```
 
 These commands improve:
 
-Reusability
-Maintainability
-Readability
-Cleaner test structure
-🔐 Environment Variables
+- Reusability
+- Maintainability
+- Readability
+- Cleaner test structure
+
+---
+
+# 🔐 Environment Variables
 
 Sensitive values are stored securely using environment configuration.
 
-Create .env
+## Create `.env`
+
+```env
 CYPRESS_PROJECT_ID=your_project_id
-Create cypress.env.json
+```
+
+## Create `cypress.env.json`
+
+```json
 {
   "USER_EMAIL": "your_email@example.com",
   "USER_PASSWORD": "your_password",
@@ -151,47 +248,113 @@ Create cypress.env.json
   "CREATE_REAL_POST": false,
   "PUBLISH_REAL_POST": false
 }
-⚠️ Important Security Notes
+```
 
-✅ .env is ignored by Git
-✅ cypress.env.json is ignored by Git
+---
+
+# ⚠️ Important Security Notes
+
+✅ `.env` is ignored by Git  
+✅ `cypress.env.json` is ignored by Git
 
 ❌ Never push:
 
-Passwords
-Tokens
-API Keys
-Cypress Dashboard Keys
-Private credentials
-📦 Installation
-Clone Repository
+- Passwords
+- Tokens
+- API Keys
+- Cypress Dashboard Keys
+- Private credentials
+
+---
+
+# 📦 Installation
+
+## Clone Repository
+
+```bash
 git clone YOUR_REPOSITORY_URL
 cd YOUR_PROJECT_FOLDER
-Install Dependencies
+```
+
+## Install Dependencies
+
+```bash
 npm install
-▶️ Running Tests
-Open Cypress Test Runner
+```
+
+---
+
+# ▶️ Running Tests
+
+## Open Cypress Test Runner
+
+```bash
 npm run cy:open
-Run All Tests (Headless)
+```
+
+## Run All Tests (Headless)
+
+```bash
 npm run cy:run
-Run All Tests with Dashboard Recording
+```
+
+## Run All Tests with Dashboard Recording
+
+```bash
 npm run cy:all
-🎯 Run Specific Test Suites
-Login Tests
+```
+
+---
+
+# 🎯 Run Specific Test Suites
+
+## Login Tests
+
+```bash
 npm run cy:login
-Search Tests
+```
+
+## Search Tests
+
+```bash
 npm run cy:search
-Navigation Tests
+```
+
+## Navigation Tests
+
+```bash
 npm run cy:nav
-API Tests
+```
+
+## API Tests
+
+```bash
 npm run cy:api
-Visual Regression Tests
+```
+
+## Visual Regression Tests
+
+```bash
 npm run cy:visual
-Cypress Studio Tests
+```
+
+## Cypress Studio Tests
+
+```bash
 npm run cy:studio
-CSV-Driven Tests
+```
+
+## CSV-Driven Tests
+
+```bash
 npm run cy:csv
-📜 npm Scripts
+```
+
+---
+
+# 📜 npm Scripts
+
+```json
 {
   "cy:open": "cypress open",
   "cy:run": "cypress run",
@@ -205,24 +368,38 @@ npm run cy:csv
   "cy:record": "cypress run --record",
   "cy:all": "cypress run --record"
 }
-📁 Fixtures
+```
+
+---
+
+# 📁 Fixtures
 
 The framework uses fixture files to separate test data from test logic.
 
 📂 Location:
 
+```text
 cypress/fixtures/
-Included Fixtures
-File	Purpose
-users.json	Login test users
-search_keywords.json	Search test keywords
-form_data.json	API/article payload data
-test_data.csv	CSV-driven testing
-🔒 Security & Git Ignore
+```
+
+## Included Fixtures
+
+| File | Purpose |
+|------|----------|
+| users.json | Login test users |
+| search_keywords.json | Search test keywords |
+| form_data.json | API/article payload data |
+| test_data.csv | CSV-driven testing |
+
+---
+
+# 🔒 Security & Git Ignore
 
 This project excludes sensitive/generated files from GitHub.
 
-Ignored Files
+## Ignored Files
+
+```text
 .env
 cypress.env.json
 node_modules/
@@ -230,21 +407,30 @@ cypress/videos/
 cypress/screenshots/
 cypress/downloads/
 cypress/snapshots/
-Before Pushing Code
+```
+
+---
+
+# ⚠️ Before Pushing Code
 
 Always verify:
 
+```bash
 git status
+```
 
 Do NOT commit:
 
-API Tokens
-Passwords
-Email Credentials
-Dashboard Keys
-Generated Screenshots/Videos
-node_modules
-🖼️ Visual Testing Notes
+- API Tokens
+- Passwords
+- Email Credentials
+- Dashboard Keys
+- Generated Screenshots/Videos
+- node_modules
+
+---
+
+# 🖼️ Visual Testing Notes
 
 Visual regression testing uses:
 
@@ -252,51 +438,74 @@ Visual regression testing uses:
 
 Generated snapshots/screenshots/videos are ignored from Git to avoid:
 
-Large repository size
-Machine-specific artifacts
-Unnecessary commits
-⚠️ Real API Safety
+- Large repository size
+- Machine-specific artifacts
+- Unnecessary commits
+
+---
+
+# ⚠️ Real API Safety
 
 The API suite can create a real DEV.to article, but it is disabled by default.
 
-Enable Real Article Creation
+## Enable Real Article Creation
+
+```json
 {
   "CREATE_REAL_POST": true
 }
-Enable Real Publishing
+```
+
+## Enable Real Publishing
+
+```json
 {
   "PUBLISH_REAL_POST": true
 }
+```
 
-⚠️ Keep both values as false unless intentionally testing real article creation.
+⚠️ Keep both values as `false` unless intentionally testing real article creation.
 
-⭐ Best Practices Followed
+---
 
-✅ Reusable Custom Commands
-✅ Fixture-Based Data Management
-✅ Secure Environment Configuration
-✅ Organized Test Structure
-✅ API Mocking & Validation
-✅ Data-Driven Testing
-✅ Visual Regression Testing
-✅ Git Ignore Protection
-✅ Locked Dependencies with package-lock.json
+# ⭐ Best Practices Followed
 
-👨‍💻 Author
-Umar Hassan
-📄 License
+- ✅ Reusable Custom Commands
+- ✅ Fixture-Based Data Management
+- ✅ Secure Environment Configuration
+- ✅ Organized Test Structure
+- ✅ API Mocking & Validation
+- ✅ Data-Driven Testing
+- ✅ Visual Regression Testing
+- ✅ Git Ignore Protection
+- ✅ Locked Dependencies with `package-lock.json`
+
+---
+
+# 👨‍💻 Author
+
+## Umar Hassan
+
+---
+
+# 📄 License
 
 This project is created for:
 
-Educational Purposes
-Learning Automation Testing
-Demonstration & Practice
-⭐ Support
+- Educational Purposes
+- Learning Automation Testing
+- Demonstration & Practice
+
+---
+
+# ⭐ Support
 
 If you found this project useful:
 
-🌟 Star the repository
-🍴 Fork the project
-📢 Share with others
+- 🌟 Star the repository
+- 🍴 Fork the project
+- 📢 Share with others
 
-🚀 Happy Testing with Cypress!
+---
+
+# 🚀 Happy Testing with Cypress!
